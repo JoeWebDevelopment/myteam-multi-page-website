@@ -1,0 +1,935 @@
+@import url('https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
+
+:root {
+    /* Colors */
+    
+  --color-neutral-950: #000000;
+  --color-neutral-50: #fafafa;
+  --color-neutral-0: #ffffff;
+
+  --color-teal-950: #002529;
+  --color-teal-900: #012f34;
+  --color-teal-850: #004047;
+  --color-teal-800: #014e56;
+  --color-teal-700: #2c6269;
+  --color-teal-400: #79c8c7;
+
+  --color-rose-500: #ff7f7f;
+  --color-cyan-100: #c4fffe;
+
+  /* Typography */
+
+  --ff-main:  "Livvic", sans-serif;
+}
+
+@layer reset{
+    /* Padding and borders should not change an element's declared size. */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Browser margin/padding defaults vary wildly across elements and vendors.
+   Start from zero - handle spacing intentionally via the design system. */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevents flex/grid children from overflowing their container.
+   The default min-width: auto on flex and grid children causes overflow bugs
+   that are notoriously confusing to debug. */
+* {
+  min-width: 0;
+}
+
+/* Hidden means hidden: !important is warranted here. */
+[hidden] {
+  display: none !important;
+}
+
+/* Allows CSS transitions to/from intrinsic keyword sizes (auto, min-content, etc.).
+   Only meaningful for users who haven't requested reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+/* Prevent adjustments of font size after orientation changes in iOS. */
+html {
+  -webkit-text-size-adjust: 100%; /* Safari, iOS Safari */
+  text-size-adjust: 100%;         /* Chrome, Edge, Firefox Android */
+}
+
+/* Ensures the page occupies at least the full viewport.
+   svh uses the viewport height with mobile browser UI expanded,
+   so it stays stable instead of resizing (and triggering relayout)
+   as the address bar shows and hides.
+   It overrides the vh fallback in browsers that support it. */
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+/* Reserves space for the scrollbar, when the scrollbar is not showing.
+   Prevents flicker when changes on the page cause the scrollbar to toggle. */
+html {
+  scrollbar-gutter: stable;
+}
+
+/* Scroll events captured by the scrolling area you're pointing at, by default. */
+html {
+  overscroll-behavior: contain;
+}
+
+/* Antialiased rendering looks better on high-DPI (retina) screens.
+   On lower-DPI displays, subpixel antialiasing (the default) can be
+   sharper, so this is slightly lossy on older monitors.
+   Enable kerning and ligatures at small font-sizes by default. */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+  text-rendering: optimizeLegibility;
+}
+
+/* A unitless line-height avoids inheritance math issues.
+   The smaller default line-height for h-elements avoids excessive
+   line-height when your design system (likely) applies larger fonts.
+   WCAG recommends at least 1.5 for body copy. */
+body {
+  line-height: 1.5;
+}
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+}
+
+/* Prevents long URLs or unbreakable strings from blowing out their container. */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* Smarter line-breaking:
+   'pretty' avoids widows (lone words on the last line of a paragraph).
+   'balance' distributes heading text more evenly across lines. 
+   Harmless in browsers that don't support them. */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/* Headings carry semantic meaning, not visual weight.
+   h1–h6 sizing and boldness should come from your design system. */
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* Inline embedded content has a gap at the bottom caused by baseline alignment.
+   Block display removes it; max-width prevents overflow.
+   height: auto preserves aspect ratio when max-width constrains the width. */
+img, picture, video, canvas, svg, embed, iframe, object, audio {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Exemption for SVG icons (Heroicons/Lucide/Phosphor, etc.) with explicit sizes:
+   these should not be constrained. */
+svg[width][height] {
+  max-width: revert;
+}
+
+/* Strips visual chrome from buttons so they can be styled from scratch. */
+button {
+  background: none;
+  border: none;
+}
+
+/* Form elements use OS-level fonts and ignore font inheritance by default. */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Strips OS-level native styling from interactive elements.
+   Leaves border and background intact, providing accessibility by default.
+   Visual styling should be handled by the design system. */
+input, button, textarea, select {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Anything interactive should signal clickability.
+   'button' attribute targets [type="button"], [type="submit"], etc. */
+button,
+[role="button"],
+label,
+summary,
+select {
+  cursor: pointer;
+}
+
+/* Inherit color by default so links don't always appear in browser-default blue.
+   Text-decoration is intentionally left as underlined for accessibility. */
+a {
+  color: inherit;
+}
+
+/* Removes bullets/numbers.
+   list markers should be an explicit choice, not a default. */
+ul, ol {
+  list-style: none;
+}
+
+/* Tables default to separated borders with spacing between cells.
+   For any custom table design, you'll want to collapse the borders. */
+table {
+  border-collapse: collapse;
+}
+
+/* Browsers apply bold to <th> elements.
+   Boldness in tables should be controlled by your design system. */
+th {
+  font-weight: inherit;
+}
+
+/* Fieldsets have a surprise border and padding that most UIs don't want. */
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+/* More of a normalization, but these are inconsistently styled in some browsers. */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub { bottom: -0.25em; }
+sup { top: -0.5em; }
+
+/* Ensures monospace elements render at the same size as surrounding text. */
+pre, code, kbd, samp {
+  font-family: monospace;
+  font-size: inherit;
+}
+
+/* Browser-generated quotation marks are rarely wanted in a design system. */
+blockquote,
+q {
+  quotes: none;
+}
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: none;
+}
+
+/* Creates an explicit stacking context on the app root.
+   Prevents z-index bleed from portals, modals, or tooltips
+   from leaking out unexpectedly. */
+#root {
+  isolation: isolate;
+}
+}
+
+
+body{
+    background-color: var(--color-teal-800);
+    font-family: var(--ff-main);
+}
+
+/* Header Styling/Layout */
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+}
+
+.header-container{
+        width: 100%;
+        max-width: 1115px;
+        margin-top: 3.5rem;
+        display: flex;
+        flex-direction: row;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+    width: 100%;
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav-links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: var(--color-neutral-0);
+    font-size: 1.125rem;
+    line-height: 155%;
+    font-weight: 600;
+    text-transform: lowercase;
+}
+
+.btn-link{
+    padding: 0.5rem 2rem;
+    border-radius: 999px;
+    border: 2px solid var(--color-neutral-0);
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 155%;
+    color: var(--color-neutral-0);
+    text-wrap: nowrap;
+    text-decoration: none;
+    text-transform: lowercase;
+}
+
+.nav-link:hover{
+    color: var(--color-rose-500)
+    
+}
+
+.btn-link:hover{
+    background-color: var(--color-neutral-0);
+    color:var(--color-teal-700)
+}
+
+.hero-heading{
+    font-size: 6.25rem;
+font-style: normal;
+font-weight: 700;
+line-height: 100%;
+color: var(--color-neutral-0);
+}
+
+.hero-accent{
+    color: var(--color-rose-500);
+}
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    margin-top: 8.3rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    padding-block-end: 15rem;
+    background-image: url(./assets/bg-pattern-home-2.svg);
+    background-repeat: no-repeat;
+    background-position: bottom right 300px;
+
+}
+
+.hero-container{
+   background-image: url(assets/bg-pattern-home-1.svg);
+   background-repeat: no-repeat;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-position: top left -6.5rem;
+}
+
+.hero-content{
+     width: 100%;
+    max-width: 1115px;
+}
+.hero-two-column{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    align-self: stretch;
+    gap: 2rem;
+    width: 100%;
+}
+
+.hero-text-container{
+    width: 100%;
+    max-width: 445px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 5rem;
+}
+
+.hero-text{
+font-size: 1.125rem;
+font-style: normal;
+font-weight: 600;
+line-height: 155%;
+color: var(--color-neutral-0);
+}
+
+.hero-line{
+    background-color: var(--color-neutral-0);
+    height: 4px;
+    width: 50px;
+}
+
+.build{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-block: 8.61rem;
+    background-color: var(--color-teal-900);
+    background-image: url(assets/bg-pattern-home-3.svg);
+    background-position: bottom right -6.25rem;
+    background-repeat: no-repeat;
+
+}
+
+.build-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.two-column-build{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+    width: 100%;
+    max-width: 1110px;
+}
+
+.content-item{
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    align-self: stretch;
+}
+.content-item img{
+    align-self: center;
+    height: 72px;
+    width: 72px;
+    flex-shrink: 0;
+}
+
+.build-content-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    max-width: 541px;
+}
+
+.content-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+
+
+h3{
+    font-size: 1.125rem;
+font-style: normal;
+font-weight: 700;
+line-height: 155%;
+color: var(--color-rose-500);
+}
+
+.build-heading{
+    font-size: 48px;
+font-style: normal;
+font-weight: 700;
+line-height: 100%;
+color: var(--color-neutral-0);
+max-width: 445px;
+}
+
+
+
+.content-container p{
+    color: var(--color-neutral-0);
+}
+
+.success{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-block: 9.1rem;
+    background-image: url(assets/bg-pattern-home-4-about-3.svg), url(assets/bg-pattern-home-5.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: top left, bottom right; 
+}
+
+.success-container{
+    width: 100%;
+    max-width: 1110px;
+}
+
+.success-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5.5rem;
+    
+}
+
+.success-stories{
+    display: flex;
+    flex-direction: row;
+    gap: 1.875rem;
+
+}
+
+.story{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.25rem;
+   
+}
+
+.success-heading{
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    color: var(--color-neutral-0);
+    text-align: center;
+}
+
+blockquote{
+font-size: 0.9375rem;
+font-style: normal;
+font-weight: 600;
+line-height: 186%;
+color: var(--color-neutral-0);
+background-repeat: no-repeat;
+position: relative;
+}
+
+blockquote::before{
+    content:"";
+    height: 67px;
+    width: 67px;
+    background-image: url(assets/icon-quotes.svg);
+    position: absolute;
+    z-index: -1;
+    background-repeat: no-repeat;
+    top: -40px;
+    left: 40%;
+}
+
+.attribution-img{
+    width: 62px;
+    border-radius: 100%;
+    border: 2px solid var(--color-teal-400);
+}
+
+.caption-attribution{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    
+}
+
+.name{
+font-size: 1.125rem;
+font-style: normal;
+font-weight: 700;
+line-height: 155%;
+color: var(--color-teal-400);
+}
+
+.success-accent{
+    color: var(--color-teal-400);
+}
+
+.attribution-info{
+font-size: 0.8125rem;
+font-style: italic;
+font-weight: 500;
+line-height: 140%;
+color: var(--color-neutral-0);
+}
+
+.get-started{
+    background-color: var(--color-rose-500);
+    padding: 4.5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 915px;
+    
+}
+
+.cta-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+
+.cta-heading{
+    color: var(--color-teal-900);
+    font-size: 3rem;
+font-style: normal;
+font-weight: 700;
+line-height: 100%;
+}
+
+.cta-btn{
+    color: var(--color-teal-900);
+    border-color: var(--color-teal-900);
+}
+
+.cta{
+    background-image: url(assets/bg-pattern-home-6-about-5.svg);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
+
+footer{
+    width: 100%;
+    background-color: var(--color-teal-950);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-block: 2.5rem;
+}
+
+.footer-container{
+    width: 100%;
+    max-width: 1110px;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.social-links-container{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: center;
+    align-self: flex-end;
+}
+
+.footer-link{
+    color: var(--color-neutral-0);
+    text-decoration: none;
+}
+
+.footer-links{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-link-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2.5rem;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.footer-address p{
+    color: var(--color-neutral-0);
+    opacity: 0.6;
+    width: 100%;
+}
+
+.social-links-copyright{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+}
+
+.copyright{
+    color: var(--color-neutral-0);
+}
+
+.footer-links-address{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 45%;
+}
+
+
+/* Media Queries */
+
+@media(max-width: 1300px){
+    .hero-container{
+        background-image: none;
+    }
+
+}
+
+@media(max-width: 1198px){
+    .header-container{
+        padding-inline: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-two-column{
+        flex-direction: column;
+        align-items: center;
+        max-width: 573px;
+        gap: 1.5rem;
+    }
+
+    .hero-text{
+        align-self: flex-start;
+        font-size: 0.9375rem;
+        color: var(--color-neutral-0);
+    }
+    .hero-text-container{
+        max-width: 573px;
+        padding: 0.12rem;
+        text-align: center;
+    }
+    .hero-heading{
+        font-size: 4rem;
+        text-align: center;
+    }
+    
+    .hero{
+        background-position: center bottom;
+        margin-top: 4rem;
+        padding-block-end: 13rem;
+    }
+    .hero-line{
+        display: none;
+    }
+    
+    .two-column-build{
+        flex-direction: column;
+        gap: 3.75rem;
+        align-items: flex-start;
+        justify-content: center;
+        max-width: 573px;
+    }
+    .build-heading{
+        font-size: 2rem;
+
+    }
+    .build{
+        background-position: top right -6.2rem;
+    }
+    .build-content-container{
+        max-width: none;
+    }
+
+    .cta-heading{
+        font-size: 2rem;
+    }
+    .cta-container{
+        max-width: 573px;
+    }
+    
+    .success-container{
+        max-width: 573px;
+    }
+
+    .success-stories{
+        flex-direction: column;
+        gap: 5rem;
+
+    }
+    .success{
+        padding-block: 6rem;
+    }
+
+    .story{
+        gap: 0.5rem;
+    }
+    .caption-attribution{
+        gap: 1rem;
+    }
+
+    blockquote::before{
+        left: 43%;
+    }
+    .success-heading{
+        font-size: 2rem;
+        text-wrap: initial;
+    }
+    .success-heading span{
+        text-wrap: nowrap;
+    }
+
+    .cta{
+        background-position: left bottom -20px;
+    }
+
+    .footer-container{
+        padding-inline: 1.5rem;
+        width: 100%;
+    }
+    .footer-content{
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        gap: 2.5rem;
+    }
+    .footer-links-address{
+        justify-content: space-between;
+        width: 100%;
+    }
+    .footer-links{
+        gap: 1.5rem;
+    }
+    .social-links-copyright{
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+/*  Mobile */
+
+@media(max-width: 580px){
+   .hero-heading{
+    font-size: 2.5rem;
+   }
+   .hero-container{
+    max-width: 330px;
+   }
+   .hero{
+    margin-top: 3rem;
+    padding-block-end: 10rem;
+   }
+   .header-container{
+    margin-top: 1.5rem;
+   }
+   .build-heading{
+    text-align: left;
+    max-width: 240px;
+    align-self: stretch;
+    text-wrap: initial;
+   }
+   .build-container{
+    padding-inline: 1.5rem;
+    
+   }
+   .build{
+    padding-block: 4rem;
+   }
+   .content-item{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   }
+   .content-container{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+   }
+
+   .success-container{
+    padding-inline: 1.5rem;
+   }
+   blockquote::before{
+    left: 40%;
+   }
+   .success{
+    padding: 0;
+    padding-block: 8rem;
+    
+   }
+   .cta-content{
+    flex-direction: column;
+    gap: 2.5rem;
+   }
+   .cta{
+    padding-block: 6rem;
+   }
+   .cta-heading{
+    text-align: center;
+    width: inherit;
+    text-wrap: initial;
+    
+   }
+   .footer-content{
+    flex-direction: column;
+   }
+   .footer-links-address{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+   }
+   .social-links-copyright{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+   }
+   .social-links-container{
+    justify-content: center;
+    align-self: center;
+   }
+}
