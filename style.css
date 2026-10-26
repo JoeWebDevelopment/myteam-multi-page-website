@@ -711,6 +711,18 @@ footer{
     width: 45%;
 }
 
+.build-heading{
+    position: relative;
+}
+
+.build-heading::before{
+    background-color: var(--color-rose-500);
+    height: 4px;
+    width: 40px;
+    content: "";
+    position: absolute;
+    top: -2rem;
+}
 
 /* Media Queries */
 
@@ -931,5 +943,8 @@ footer{
    .social-links-container{
     justify-content: center;
     align-self: center;
+   }
+   .footer-address{
+    text-align: center;
    }
 }
