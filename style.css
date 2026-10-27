@@ -795,6 +795,10 @@ color: var(--color-neutral-0);
     align-items: center;
     justify-content: center;
     padding-block: 3.5rem;
+    background-image: url(assets/bg-pattern-about-2-contact-1.svg), url(assets/bg-pattern-home-4-about-3.svg);
+    background-repeat: no-repeat;
+    background-position: top left -6.25rem , bottom right;
+
 }
 .directors-container{
     display: flex;
@@ -830,6 +834,7 @@ color: var(--color-neutral-0);
     justify-content: center;
     gap: 1rem;
     position: relative;
+    
 }
 
 
@@ -883,6 +888,93 @@ color: var(--color-neutral-0);
     max-width: 96px;
     border-radius: 100%;
     border: 2px solid var(--color-teal-400);
+}
+
+.clients{
+    padding-block: 8rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-teal-900);
+    background-image: url("assets/bg-pattern-about-4.svg");
+    background-repeat: no-repeat;
+}
+
+.clients-container{
+    width: 100%;
+    max-width: 1110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay{
+    position: absolute;
+    background-color: var(--color-teal-950);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.linkedin:hover{
+    
+}
+
+.overlay-content{
+    width: 100%;
+    max-width: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.overlay-name{
+    color: var(--color-teal-400);
+
+}
+.overlay-content p{
+    color: var(--color-neutral-0);
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 186%;
+}
+
+.social-links-overlay{
+    display: flex;
+    flex-direction: row;
+    gap: 1.25rem;
+}
+
+.clients-content{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.clients-grid{
+    padding-block: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.client-heading{
+    font-size: 3rem;
+    color: var(--color-neutral-0);
+    font-weight: 700;
+    line-height: 100%;
 }
 
 /* Media Queries */
