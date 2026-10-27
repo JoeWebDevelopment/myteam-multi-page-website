@@ -26,12 +26,14 @@ const articleProfile = (event) => {
          console.log(event.currentTarget)
         const btnImg = event.currentTarget.querySelector('.profile-btn-img')
         event.currentTarget.style.backgroundColor = "#79c8c7"
+        event.currentTarget.closest('.director').querySelector('.overlay').style.display = "flex"
        btnImg.style.transform = 'rotate(45deg)';
     } else if((event.currentTarget.getAttribute('aria-expanded') === 'true')){
         event.currentTarget.setAttribute('aria-expanded', 'false')
          console.log(event.currentTarget)
         const btnImg = event.currentTarget.querySelector('.profile-btn-img')
         event.currentTarget.style.backgroundColor = "#ff7f7f"
+        event.currentTarget.closest('.director').querySelector('.overlay').style.display = "none"
         btnImg.style.transform = 'rotate(0deg)';
     } else{
         console.log('error')
