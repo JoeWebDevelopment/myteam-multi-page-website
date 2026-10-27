@@ -18,14 +18,17 @@
   <div class="header-container">
     <div class="menu">
       <img src="assets/logo.svg" alt="MyTeam" class="logo">
-      <nav class="header-nav">
+      <nav class="header-nav mobile-hidden" >
+        <button class="menuClose">
+          <img src="assets/icon-close.svg" alt="" class="closeImg">
+        </button>
         <ul class="nav-links">
           <li class="link-item"><a href="index.html" class="nav-link">Home</a></li>
           <li class="link-item"><a href="about.html" class="nav-link">About</a></li>
         </ul>
-        <a href="contact.html" class="btn-link">Contact Us</a>
+        <a href="contact.html" class="btn-link nav-btn">Contact Us</a>
       </nav>
-      <button class="nav-menu-btn">
+      <button class="nav-menu-btn"  aria-expanded="false">
         <img src="assets/icon-hamburger.svg" alt="" class="menu-icon">
       </button>
     </div>
@@ -251,6 +254,6 @@
   Call Us : 949-833-7432
 
   Copyright 2020. All Rights Reserved -->
-  
+  <script src="script.js"></script>
 </body>
 </html>

@@ -278,6 +278,10 @@ nav{
     justify-content: space-around;
 }
 
+.menuClose{
+    display: none;
+}
+
 .nav-links{
     display: flex;
     flex-direction: row;
@@ -946,4 +950,41 @@ footer{
    .footer-address{
     text-align: center;
    }
+   .header-nav{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 255px;
+    height: 100%;
+    background-color: var(--color-teal-700);
+    right: 0px;
+    top: 0;
+    padding-block-start: 2.5rem;
+    padding-inline-end: 1rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+   }
+   .menuClose{
+    align-self: flex-end;
+    display: inline-block;
+   }
+
+   .nav-links{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 2.5rem 1rem;
+   }
+
+   .nav-btn{
+    align-self: stretch;
+    justify-content: center;
+    margin: 0 auto;
+   }
+
+   .mobile-hidden{
+    display: none;
+   }
+
+   
 }
