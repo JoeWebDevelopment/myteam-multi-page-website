@@ -15,5 +15,38 @@ const MenuFunction = () =>{
             }
 }
 
+
+const articleBtn = document.querySelectorAll('.article-btn')
+
+
+const articleProfile = (event) => {
+
+    if((event.currentTarget.getAttribute('aria-expanded') === 'false')){
+        event.currentTarget.setAttribute('aria-expanded', 'true')
+         console.log(event.currentTarget)
+        const btnImg = event.currentTarget.querySelector('.profile-btn-img')
+        event.currentTarget.style.backgroundColor = "#79c8c7"
+       btnImg.style.transform = 'rotate(45deg)';
+    } else if((event.currentTarget.getAttribute('aria-expanded') === 'true')){
+        event.currentTarget.setAttribute('aria-expanded', 'false')
+         console.log(event.currentTarget)
+        const btnImg = event.currentTarget.querySelector('.profile-btn-img')
+        event.currentTarget.style.backgroundColor = "#ff7f7f"
+        btnImg.style.transform = 'rotate(0deg)';
+    } else{
+        console.log('error')
+    }
+
+  
+}
+
+
+articleBtn.forEach( e =>{
+    e.addEventListener('click', articleProfile)
+})
+
+
+
+
 menuOpenIcon.addEventListener('click', MenuFunction);
 menuCloseIcon.addEventListener('click', MenuFunction)
