@@ -4,6 +4,8 @@ const formCheck = (event) => {
     event.preventDefault()
 
     let firstInvalidInput = null;
+    const successMessage = document.querySelector('.successMessage')
+    successMessage.classList.add('hidden')
 
     const nameInput = document.querySelector('#name');
     const emailInput = document.querySelector('#email');
@@ -61,7 +63,6 @@ if (emailInput.validity.typeMismatch){
         firstInvalidInput.focus()
     }
         if(contactForm.checkValidity()){
-            successMessage = document.querySelector('.successMessage')
             successMessage.classList.remove('hidden')
         }
 }
