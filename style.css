@@ -1209,6 +1209,11 @@ textarea:user-invalid::placeholder, input:user-invalid::placeholder{
     opacity: 0.8;
 }
 
+.successMessage{
+    color: var(--color-neutral-0);
+    font-weight: 600;
+}
+
 
 /* Media Queries */
 
