@@ -1,0 +1,23 @@
+{
+  "name": "myteam-multi-page-website",
+  "version": "1.0.0",
+  "description": "A three-page company website built for the [Frontend Mentor myteam challenge](https://www.frontendmentor.io/challenges/myteam-multipage-website-mxlEauvW), using HTML, CSS, and vanilla JavaScript.",
+  "main": "contactForm.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoeWebDevelopment/myteam-multi-page-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/JoeWebDevelopment/myteam-multi-page-website/issues"
+  },
+  "homepage": "https://github.com/JoeWebDevelopment/myteam-multi-page-website#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.6"
+  }
+}
