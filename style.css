@@ -1062,6 +1062,7 @@ a:focus .linkimg{
     padding-inline: .75rem;
     border-bottom: 1px solid var(--color-neutral-50);
     padding-block-end: .75rem;
+    color: var(--color-neutral-0);
 
 }
 
@@ -1086,6 +1087,19 @@ color: var(--color-rose-500);
     gap: 1.5rem;
 }
 
+.input-container{
+    gap: 1rem;
+}
+
+.input-container span{
+    padding-inline: .75rem;
+   font-size: 0.625rem;
+font-style: italic;
+font-weight: 700;
+line-height: normal;
+color: var(--color-rose-500);
+}
+
 textarea{
     resize: none;
     background-color: transparent;
@@ -1093,6 +1107,7 @@ textarea{
     padding-inline: .75rem;
     border-bottom: 1px solid var(--color-neutral-0);
     padding-block-end: 3.75rem;
+    color: var(--color-neutral-0);
 }
 
 input::placeholder{
@@ -1148,6 +1163,27 @@ align-self: stretch;
     justify-content: flex-start;
 }
 
+.hidden{
+        display: none;
+    }
+
+.input-container{
+        width: 100%;
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+
+    }
+input:hover, textarea:hover{
+        cursor: pointer;
+    }
+input:user-invalid{
+        border-color: var(--color-rose-500);
+ }
+textarea:user-invalid::placeholder, input:user-invalid::placeholder{
+    color: var(--color-rose-500);
+    opacity: 0.8;
+}
 
 
 /* Media Queries */
@@ -1201,12 +1237,9 @@ align-self: stretch;
         background-position: top -6.25rem left;
     }
 
-    input:hover, textarea:hover{
-        cursor: pointer;
-    }
-    input:invalid{
-        border-color: var(--color-rose-500);
-    }
+  
+
+    
 }
 
 @media(max-width: 1198px){
@@ -1344,6 +1377,9 @@ align-self: stretch;
     }
     .contact-content{
         align-items: center;
+    }
+    .contact-container{
+        max-width: 750px;
     }
 }
 

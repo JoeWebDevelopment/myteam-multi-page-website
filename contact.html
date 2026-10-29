@@ -67,17 +67,17 @@
           </div>
         </div>
           </div>
-          <form action="" class="contact-form">
+          <form action="" class="contact-form" novalidate>
             <div class="input-container">
             <label for="name" class="contact-name visually-hidden">Name</label>
             <input type="text" name="name" id="name" required placeholder="Name" aria-describedby="nameError">
 
-            <span class="error" id="nameError">Field is required</span>
+            <span class="error hidden" id="nameError">Field is required</span>
             </div>
             <div class="input-container">
             <label for="email" class="email visually-hidden">Email</label>
             <input type="email" name="email" id="email" placeholder="Email Address" required aria-describedby="emailError">
-            <span class="error" id="emailError">Please enter a valid email address</span>
+            <span class="error hidden" id="emailError" >Please enter a valid email address</span>
             </div>
             <div class="input-container">
               <label for="company" class="visually-hidden">Company Name</label>
@@ -90,7 +90,7 @@
             <div class="input-container">
               <label for="message" class="message visually-hidden">Message</label>
             <textarea id="message" required placeholder="Message" aria-describedby="messageError" name="message"></textarea>
-            <span class="error" id="messageError" ></span>
+            <span class="error hidden" id="messageError" ></span>
             </div>
             
 
