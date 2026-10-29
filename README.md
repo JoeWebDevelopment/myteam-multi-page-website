@@ -21,7 +21,7 @@ The form shows "This field is required" for missing Name, Email Address, or Mess
 
 ### Screenshot
 
-![]("assets\image.png")
+![Screenshot of the myteam website](./assets/image.png)
 
 [View the source on GitHub](https://github.com/JoeWebDevelopment/myteam-multi-page-website)
 
