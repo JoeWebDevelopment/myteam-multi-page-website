@@ -324,10 +324,23 @@ nav{
     
 }
 
+.nav-link:focus{
+    outline-offset: 3px;
+    outline: 2px solid var(--color-rose-500);
+    color:var(--color-rose-500)
+}
+
 .btn-link:hover{
     background-color: var(--color-neutral-0);
     color:var(--color-teal-700)
 }
+
+.btn-link:focus{
+    background-color: var(--color-neutral-0);
+    color: var(--color-teal-700);
+    outline-offset: 2px;
+    outline: 3px solid var(--color-neutral-0);
+};
 
 .hero-heading{
     font-size: 6.25rem;
@@ -936,7 +949,7 @@ color: var(--color-neutral-0);
     gap: 1.5rem;
     inset: 0;
 }
-a:hover  .linkimg {
+a:hover  .linkimg{
     fill: var(--color-rose-500);
 }
 
@@ -1050,6 +1063,13 @@ a:focus .linkimg{
     color: var(--color-neutral-950);
 }
 
+.sbmtBtn:focus{
+    background-color: var(--color-neutral-0);
+    color: var(--color-teal-700);
+    outline-offset: 2px;
+    outline: 3px solid var(--color-neutral-0);
+}
+
 .contact-heading{
     font-size: 4rem;
     font-weight: 700;
@@ -1098,6 +1118,10 @@ font-style: italic;
 font-weight: 700;
 line-height: normal;
 color: var(--color-rose-500);
+}
+
+.social-link:hover svg{
+    fill: var(--color-rose-500)
 }
 
 textarea{
@@ -1531,6 +1555,9 @@ textarea:user-invalid::placeholder, input:user-invalid::placeholder{
     padding-inline-end: 1rem;
     align-items: flex-start;
     justify-content: flex-start;
+    background-image: url(assets/bg-pattern-about-1-mobile-nav-1.svg);
+    background-repeat: no-repeat;
+    background-position: bottom right -6.25rem;
    }
    .menuClose{
     align-self: flex-end;
