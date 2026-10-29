@@ -19,6 +19,10 @@ The form shows "This field is required" for missing Name, Email Address, or Mess
 
 ### Repository
 
+### Screenshot
+
+![]("assets\image.png")
+
 [View the source on GitHub](https://github.com/JoeWebDevelopment/myteam-multi-page-website)
 
 ## Built with
@@ -68,7 +72,7 @@ This project has provided practice in:
 
 ## AI collaboration
 
-ChatGPT/Codex was used as a tutor and code-review partner for layout reasoning, debugging, DOM events, and form validation. The developer implemented the site, using focused explanations and small examples rather than generated page implementations. The assistant initially added the color custom properties and later drafted this README at the developer's request.
+ChatGPT/Codex was used as a tutor and code-review partner for layout reasoning, debugging, DOM events, and form validation. I did all feature implementations, codex was really only used for focused explanations and small examples rather than generated page implementations. I  did initially use codex to add the color custom properties and later draft this README. ![alt text](image.png).
 
 ## Credits
 
