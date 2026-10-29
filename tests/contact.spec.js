@@ -1,9 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
-const CONTACT_URL = 'http://127.0.0.1:5500/contact.html';
-
 test.beforeEach(async ({ page }) => {
-  await page.goto(CONTACT_URL);
+  await page.goto('/contact.html');
 });
 
 async function submitForm(page) {
