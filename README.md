@@ -6,16 +6,16 @@ A three-page company website built for the [Frontend Mentor myteam challenge](ht
 
 The project recreates the supplied designs across Home, About, and Contact pages. It focuses on responsive layouts, shared styles, DOM interaction, and client-side form validation without a framework.
 
-**Status:** All three pages are implemented. Final validation fixes, accessibility improvements, and responsive checks are in progress.
+**Status:** All three pages are implemented, including custom form validation and accessibility updates. Final polish and browser checks are in progress.
 
 ### Pages and interactions
 
 - **Home:** Hero, feature list, customer testimonials, call to action, and shared footer.
-- **About:** Company introduction, director cards with toggleable quotations and social links, and client logos.
+- **About:** Company introduction, director cards with toggleable quotations and social links, named disclosure buttons connected to their panels, and client logos.
 - **Contact:** Contact information and a form with Name, Email Address, Company Name, Title, and Message fields.
-- **Shared navigation:** Mobile menu opened and closed with buttons.
+- **Shared navigation:** Named mobile menu controls with expanded-state updates, focus moved to the close button when opened, and focus returned to the opener when closed. Header and footer navigation have distinguishing labels.
 
-The form is intended to show "This field is required" for missing Name, Email Address, or Message values, and "Please use a valid email address" for a malformed email. The custom validation is still being finalized. There is no backend or message-delivery service connected.
+The form shows "This field is required" for missing Name, Email Address, or Message values, and "Please use a valid email address" for a malformed email. Errors clear on a corrected submission, invalid fields receive `aria-invalid`, and focus moves to the first invalid control. Valid entries reveal a confirmation message, which clears before each subsequent validation attempt. There is no backend or message-delivery service connected.
 
 ### Repository
 
@@ -44,7 +44,8 @@ index.html       Home page
 about.html       About page and director cards
 contact.html     Contact page and form
 style.css        Shared styles, page styles, and media queries
-script.js        Menu, director toggles, and form validation
+script.js        Shared menu behavior and director toggles
+contactForm.js   Contact-only validation and feedback
 assets/          Logos, portraits, icons, and decorative patterns
 ```
 
@@ -59,20 +60,11 @@ This project has provided practice in:
 - Attaching listeners to multiple controls with `querySelectorAll()` and `forEach()`.
 - Using `event.currentTarget`, `closest()`, and scoped `querySelector()` calls to update the correct card.
 - Keeping expanded states synchronized with visible content.
+- Naming icon-only controls and connecting disclosure buttons to panels with unique IDs.
+- Managing navigation focus and directing users to the first invalid form field.
 - Distinguishing boolean validation properties from string-valued HTML attributes.
 - Using `valueMissing` and `typeMismatch` to select field-specific error messages.
 - Understanding block scope and why variables needed by multiple branches must be declared outside those branches.
-
-## Remaining work
-
-- Guard page-specific JavaScript initialization when its target element is absent.
-- Finish submission handling and ensure email errors appear and clear correctly.
-- Improve accessible names, error-state feedback, heading hierarchy, and keyboard behavior.
-- Check mobile gutters, CTA wrapping, director-card sizing, and decorative positioning.
-- Correct favicon paths and review placeholder social-link destinations.
-- Remove debugging output, unused variables, empty rules, and repeated styles.
-- Complete browser checks across desktop, tablet, mobile, and intermediate widths.
-- Add implementation screenshots and deployment links after the final review.
 
 ## AI collaboration
 
