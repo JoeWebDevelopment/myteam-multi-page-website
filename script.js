@@ -7,12 +7,14 @@ const MenuFunction = () =>{
             if(menuOpenIcon.getAttribute('aria-expanded') === 'false'){
                 menu.classList.remove('mobile-hidden')
                 menuOpenIcon.setAttribute('aria-expanded', 'true');
-                
+                menuCloseIcon.focus();
             
             }else if(menuOpenIcon.getAttribute('aria-expanded') === 'true'){
                 menu.classList.add('mobile-hidden')
                 menuOpenIcon.setAttribute('aria-expanded', 'false');
+                menuOpenIcon.focus();
             }
+           
 }
 
 

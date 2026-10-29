@@ -340,7 +340,7 @@ nav{
     color: var(--color-teal-700);
     outline-offset: 2px;
     outline: 3px solid var(--color-neutral-0);
-};
+}
 
 .hero-heading{
     font-size: 6.25rem;

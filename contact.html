@@ -14,8 +14,8 @@
   <div class="header-container">
     <div class="menu">
       <img src="assets/logo.svg" alt="MyTeam" class="logo">
-      <nav class="header-nav mobile-hidden" >
-        <button class="menuClose">
+      <nav class="header-nav mobile-hidden" aria-label="primary-navigation" id="primary-nav">
+        <button class="menuClose" aria-label="Close Navigation" aria-controls="primary-nav">
           <img src="assets/icon-close.svg" alt="" class="closeImg">
         </button>
         <ul class="nav-links">
@@ -24,7 +24,7 @@
         </ul>
         <a href="contact.html" class="btn-link nav-btn">Contact Us</a>
       </nav>
-      <button class="nav-menu-btn"  aria-expanded="false">
+      <button class="nav-menu-btn"  aria-expanded="false" aria-label="Open Navigation" aria-controls="primary-nav">
         <img src="assets/icon-hamburger.svg" alt="" class="menu-icon">
       </button>
     </div>
