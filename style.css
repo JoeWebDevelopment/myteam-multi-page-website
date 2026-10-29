@@ -485,6 +485,7 @@ color: var(--color-rose-500);
 }
 
 .build-heading{
+    position: relative;
     font-size: 48px;
 font-style: normal;
 font-weight: 700;
@@ -741,10 +742,6 @@ footer{
     flex-direction: row;
     justify-content: space-between;
     width: 45%;
-}
-
-.build-heading{
-    position: relative;
 }
 
 .build-heading::before{
@@ -1108,6 +1105,10 @@ color: var(--color-rose-500);
 }
 
 .input-container{
+    width: 100%;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
 }
 
@@ -1149,8 +1150,6 @@ textarea::placeholder{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-.contact-item{
     font-size: 1.125rem;
 font-style: normal;
 font-weight: 700;
@@ -1159,12 +1158,9 @@ width: 100%;
 align-self: stretch;
 }
 
-.content-container{
-    display: flex;
-    flex-direction: column;
+.contact-asklist .content-container{
     justify-content: center;
     align-items: center;
-    gap: 1rem;
 }
 
 .visually-hidden {
@@ -1187,17 +1183,6 @@ align-self: stretch;
     justify-content: flex-start;
 }
 
-.hidden{
-        display: none;
-    }
-
-.input-container{
-        width: 100%;
-        align-self: stretch;
-        display: flex;
-        flex-direction: column;
-
-    }
 input:hover, textarea:hover{
         cursor: pointer;
     }
