@@ -1,105 +1,85 @@
-# Frontend Mentor - myteam website
+﻿# myteam multi-page website
 
-![Design preview for the myteam website coding challenge](./preview.jpg)
+A three-page company website built for the [Frontend Mentor myteam challenge](https://www.frontendmentor.io/challenges/myteam-multipage-website-mxlEauvW), using HTML, CSS, and vanilla JavaScript.
 
-## Welcome! 👋
+## Overview
 
-Thanks for purchasing this premium Frontend Mentor coding challenge.
+The project recreates the supplied designs across Home, About, and Contact pages. It focuses on responsive layouts, shared styles, DOM interaction, and client-side form validation without a framework.
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects. These premium challenges are perfect portfolio pieces, so please feel free to use what you create in your portfolio to show others.
+**Status:** All three pages are implemented. Final validation fixes, accessibility improvements, and responsive checks are in progress.
 
-**To do this challenge, you need a solid understanding of HTML and CSS and a basic understanding of JavaScript.**
+### Pages and interactions
 
-## The challenge
+- **Home:** Hero, feature list, customer testimonials, call to action, and shared footer.
+- **About:** Company introduction, director cards with toggleable quotations and social links, and client logos.
+- **Contact:** Contact information and a form with Name, Email Address, Company Name, Title, and Message fields.
+- **Shared navigation:** Mobile menu opened and closed with buttons.
 
-Your challenge is to build out this multi-page website and get it looking as close to the design as possible.
+The form is intended to show "This field is required" for missing Name, Email Address, or Message values, and "Please use a valid email address" for a malformed email. The custom validation is still being finalized. There is no backend or message-delivery service connected.
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+### Repository
 
-Your users should be able to:
+[View the source on GitHub](https://github.com/JoeWebDevelopment/myteam-multi-page-website)
 
-- View the optimal layout for each page depending on their device's screen size
-- See hover states for all interactive elements throughout the site
-- See the correct content for each team member on the About page when the `+` icon is clicked
-- Receive an error message when the contact form is submitted if:
-  - The `Name`, `Email Address` or `Message` fields are empty should show "This field is required"
-  - The `Email Address` is not formatted correctly should show "Please use a valid email address"
+## Built with
 
-### Want some support on the challenge?
+- HTML with native form controls
+- CSS custom properties for the color palette and font family
+- Flexbox and CSS Grid
+- Desktop-first styles with media queries for smaller screens
+- Vanilla JavaScript and DOM event listeners
+- The browser's Constraint Validation API
+- Livvic from Google Fonts
 
-[Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+## Running locally
 
-## Where to find everything
+Open `index.html` in a browser, or serve this directory with your preferred local static server, such as your editor's Live Server extension. No package installation or build step is required.
 
-Your task is to build out the project to the design file provided. You can download the Figma design file on the platform. **Please be sure not to share it with anyone else.** The design download comes with a `README.md` file as well to help you get set up.
+The font is loaded from Google Fonts and requires an internet connection. Images and SVG assets are stored locally in `assets/`.
 
-All the required assets for this project are in the `/assets` folder. The assets are already exported for the correct screen size and optimized. Some images are reusable at multiple screen sizes. So if you don't see an image in a specific folder, it will typically be in another folder for that page.
+## Project structure
 
-The design system in the design file will give you more information about the various colors, fonts, and styles used in this project.
+```text
+index.html       Home page
+about.html       About page and director cards
+contact.html     Contact page and form
+style.css        Shared styles, page styles, and media queries
+script.js        Menu, director toggles, and form validation
+assets/          Logos, portraits, icons, and decorative patterns
+```
 
-## Using AI coding assistants
+## Learning focus
 
-We've included two files to help you if you're using AI coding assistants (like Claude, GitHub Copilot, Cursor, etc.) while working on this challenge:
+This project has provided practice in:
 
-- `AGENTS.md` - Contains detailed instructions for AI assistants on how to help you with this challenge. It's tailored to this challenge's difficulty level, so the AI will provide guidance appropriate to your learning stage—offering more support for beginner challenges and encouraging more independence on advanced ones.
-- `CLAUDE.md` - A pointer file that directs Claude-based tools to the AGENTS.md instructions.
+- Translating Figma spacing into padding, gaps, and content widths rather than relying on fixed section heights.
+- Choosing responsive changes based on content pressure and checking widths between the supplied designs.
+- Understanding flex item sizing, including why an image can shrink despite a declared width.
+- Reusing footer groupings across desktop, tablet, and mobile layouts.
+- Attaching listeners to multiple controls with `querySelectorAll()` and `forEach()`.
+- Using `event.currentTarget`, `closest()`, and scoped `querySelector()` calls to update the correct card.
+- Keeping expanded states synchronized with visible content.
+- Distinguishing boolean validation properties from string-valued HTML attributes.
+- Using `valueMissing` and `typeMismatch` to select field-specific error messages.
+- Understanding block scope and why variables needed by multiple branches must be declared outside those branches.
 
-**How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
+## Remaining work
 
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
+- Guard page-specific JavaScript initialization when its target element is absent.
+- Finish submission handling and ensure email errors appear and clear correctly.
+- Improve accessible names, error-state feedback, heading hierarchy, and keyboard behavior.
+- Check mobile gutters, CTA wrapping, director-card sizing, and decorative positioning.
+- Correct favicon paths and review placeholder social-link destinations.
+- Remove debugging output, unused variables, empty rules, and repeated styles.
+- Complete browser checks across desktop, tablet, mobile, and intermediate widths.
+- Add implementation screenshots and deployment links after the final review.
 
-## Building your project
+## AI collaboration
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+ChatGPT/Codex was used as a tutor and code-review partner for layout reasoning, debugging, DOM events, and form validation. The developer implemented the site, using focused explanations and small examples rather than generated page implementations. The assistant initially added the color custom properties and later drafted this README at the developer's request.
 
-1. Separate the `starter-code` from the rest of this project and rename it to something meaningful for you. Initialize the codebase as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/). **⚠️ IMPORTANT ⚠️: There are already a couple of `.gitignore` files in this project. Please do not remove them or change the content of the files. If you create a brand new project, please use the `.gitignore` files provided in your new codebase. This is to avoid the accidental upload of the Figma design file to GitHub. With these premium challenges, please be sure not to share the design file in your GitHub repo. Thanks!**
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+## Credits
 
-## Deploying your project
+Design and supplied visual assets: [Frontend Mentor](https://www.frontendmentor.io/).
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
-
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
-
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://www.frontendmentor.io/guides/hosting-your-solution).
-
-## Create a custom `README.md`
-
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
-
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
-
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
-
-## Submitting your solution
-
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://www.frontendmentor.io/guides/how-to-submit-solutions) for tips on how to do this.
-
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-**⚠️ IMPORTANT ⚠️: With these premium challenges, please be sure not to upload the design file to GitHub when you're submitting to the platform and sharing it around. If you've created a brand new project, the easiest way to do that is to copy across the `.gitignore` provided in this starter project.**
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community).
-2. Share on [X (formerly Twitter)](https://x.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in your post. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on [LinkedIn](https://www.linkedin.com/company/frontend-mentor/).
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback.
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-**Have fun building!** 🚀
+The premium Figma design file is not included. Preserve the supplied `.gitignore` rules to avoid publishing it.
