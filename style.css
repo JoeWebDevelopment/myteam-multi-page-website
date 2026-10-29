@@ -996,6 +996,160 @@ a:focus .linkimg{
     line-height: 100%;
 }
 
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-block: 7.5rem;
+    background-image: url(assets/bg-pattern-about-2-contact-1.svg), url(assets/bg-pattern-contact-2.svg);
+    background-position: top 8rem left -6.25rem, bottom right -6.25rem;
+    background-repeat: no-repeat;
+}
+
+.contact-container{
+    width: 100%;
+    max-width: 1110px;
+    padding-inline: 1rem;
+}
+
+.two-column-contact{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1.875rem;
+}
+
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    flex: 1;
+    
+}
+
+.sbmtBtn{
+    align-self: flex-start;
+    padding: 0.5rem 2rem;
+    background-color: transparent;
+    border-radius: 999px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 155%;
+    text-transform: lowercase;
+    color: var(--color-neutral-0);
+    border: 1px solid var(--color-neutral-0);
+}
+
+.sbmtBtn:hover{
+    background-color: var(--color-neutral-0);
+    color: var(--color-neutral-950);
+}
+
+.contact-heading{
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--color-neutral-0);
+}
+
+.contact-form input{
+    background-color: transparent;
+    border: none;
+    padding-inline: .75rem;
+    border-bottom: 1px solid var(--color-neutral-50);
+    padding-block-end: .75rem;
+
+}
+
+.contact-subheading{
+    font-size: 2rem;
+font-style: normal;
+font-weight: 700;
+line-height: 100%;
+color: var(--color-rose-500);
+}
+
+.contact-content{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex: 1;
+}
+
+.contact-asklist{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+textarea{
+    resize: none;
+    background-color: transparent;
+    border: none;
+    padding-inline: .75rem;
+    border-bottom: 1px solid var(--color-neutral-0);
+    padding-block-end: 3.75rem;
+}
+
+input::placeholder{
+    color: var(--color-neutral-0);
+    opacity: 0.6;
+}
+
+textarea::placeholder{
+    color: var(--color-neutral-0);
+    opacity: 0.6;
+}
+
+.contact-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contact-item{
+    font-size: 1.125rem;
+font-style: normal;
+font-weight: 700;
+line-height: 155%;
+width: 100%;
+align-self: stretch;
+}
+
+.content-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+
+.contact-asklist .content-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+
 /* Media Queries */
 
 @media(max-width: 1400px){
@@ -1017,6 +1171,10 @@ a:focus .linkimg{
         justify-content: center;
         align-items: center;
         gap: 1.75rem;
+    }
+
+    .contact{
+        padding-block-end: 12rem;
     }
     .about-content{
         text-align: center;
@@ -1041,6 +1199,13 @@ a:focus .linkimg{
     }
     .clients{
         background-position: top -6.25rem left;
+    }
+
+    input:hover, textarea:hover{
+        cursor: pointer;
+    }
+    input:invalid{
+        border-color: var(--color-rose-500);
     }
 }
 
@@ -1171,6 +1336,15 @@ a:focus .linkimg{
         flex-direction: row;
         justify-content: space-between;
     }
+    .two-column-contact{
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+    
+    }
+    .contact-content{
+        align-items: center;
+    }
 }
 
 @media (max-width: 1100px) {
@@ -1187,6 +1361,9 @@ a:focus .linkimg{
 
     .directors{
         background-position: top -6.25rem left -6.25rem, bottom right;
+    }
+    .contact{
+        background-position: left -12.5rem , bottom right -6.25rem;
     }
 
     .director-heading{

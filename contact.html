@@ -31,43 +31,74 @@
   </div>
 </header>
 
-  <!-- home
-  about
-
-  contact us
-
-
-
-  Contact
-
-  Ask us about
-
-  The quality of our talent network
-  Usage & implementation of our software
-  How we help drive innovation
-
-  Name
-  Email Address
-  Company Name
-  Title
-  Message
-
-  submit
-
-
-
-  home
-  about
-
-  987  Hillcrest Lane
-  Irvine, CA
-  California 92714
-  Call Us : 949-833-7432
-
-  Copyright 2020. All Rights Reserved
-   -->
+ 
   <main>
-    
+    <div class="contact">
+      <div class="contact-container">
+        <div class="two-column-contact">
+          <div class="contact-content">
+            <h1 class="contact-heading">
+              Contact
+            </h1>
+            <p class="contact-subheading">
+              Ask us about
+            </p>
+            <div class="contact-asklist">
+          <div class="content-item">
+            <img src="assets/icon-person.svg" alt="">
+            <div class="content-container">
+             <p class="contact-item">
+              The quality of our talent network
+             </p>
+            </div>
+          </div>
+          <div class="content-item">
+            <img src="assets/icon-cog.svg" alt="">
+            <div class="content-container">
+              <p class="contact-item">Usage & implementation of our software</p>
+            </div>
+          </div>
+          <div class="content-item">
+            <img src="assets/icon-chart.svg" alt="">
+            <div class="content-container">
+          
+              <p class="contact-item">How we help drive innovation.</p>
+            </div>
+          </div>
+        </div>
+          </div>
+          <form action="" class="contact-form">
+            <div class="input-container">
+            <label for="name" class="contact-name visually-hidden">Name</label>
+            <input type="text" name="name" id="name" required placeholder="Name" aria-describedby="nameError">
+
+            <span class="error" id="nameError">Field is required</span>
+            </div>
+            <div class="input-container">
+            <label for="email" class="email visually-hidden">Email</label>
+            <input type="email" name="email" id="email" placeholder="Email Address" required aria-describedby="emailError">
+            <span class="error" id="emailError">Please enter a valid email address</span>
+            </div>
+            <div class="input-container">
+              <label for="company" class="visually-hidden">Company Name</label>
+            <input type="text" name="company" id="company" placeholder="Company Name">
+            </div>
+            <div class="input-container">
+              <label for="title" class="title visually-hidden">Title</label>
+            <input type="text" name="title" id="title" placeholder="Title">
+            </div>
+            <div class="input-container">
+              <label for="message" class="message visually-hidden">Message</label>
+            <textarea id="message" required placeholder="Message" aria-describedby="messageError" name="message"></textarea>
+            <span class="error" id="messageError" ></span>
+            </div>
+            
+
+            <button type="submit" class="sbmtBtn">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </main>
    <footer>
     <div class="footer-container">
